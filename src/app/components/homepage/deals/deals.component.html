@@ -21,7 +21,7 @@
               <div>
                 <span>* Trạng thái:{{listHouse.trangThai}} </span>
               </div>
-              <form [formGroup]="formGroup">
+              <form [formGroup]="formGroup" (ngSubmit)="saveDeal()">
                 <div class="form-group">
                   <label><span class="req">* </span> Loại nhà:  {{listHouse.categoryHouse.name}}</label>
                 </div>
@@ -42,15 +42,26 @@
                   <button class="w3-button w3-black w3-display-right" onclick="plusSlides(1)">&#10095;</button>
 
                 </div>
-                <br>
-                <div>Đánh giá</div>
-                <div *ngFor="let d of deaslList">
-                  {{d.customer.userName}} : {{d.phanHoi}}
+                <div class="form-group">
+                  <label for="ngayDen">Ngày đặt thuê</label>
+                  <input id="ngayDen"  formControlName="ngayDen" type="text" class="form-control" value=""/>
+                </div>
+                <div class="form-group">
+                  <label for="ngayDi">Ngày trả phòng</label>
+                  <input id="ngayDi"  formControlName="ngayDi" type="text" class="form-control" value=""/>
+                </div>
+                <div class="form-group">
+                  <label for="tien">Số tiền phải trả</label>
+                  <input id="tien"  formControlName="thanhTien" type="text" class="form-control" value=""/>
                 </div>
                 <div>
-                  <button routerLink="/deals">Đặt thuê</button>
+                  <button type="submit" >Đặt thuê</button>
                 </div>
-
+                <div *ngIf="isShow"
+                     class="alert {{ (isSuccess) ? 'alert-success' : 'alert-danger' }}"
+                     role="alert">
+                  {{message}}
+                </div>
               </form>
             </div>
           </div>
@@ -63,4 +74,3 @@
   </div>
 </div>
 <app-footer></app-footer>
-

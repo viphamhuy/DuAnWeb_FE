@@ -23,7 +23,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link sparkle u-hover--sparkle" *ngIf="(checkLogin === 'true' || checkLogin == null) ? true : false" routerLink="/login-homepage">Đăng nhập</a>
-        <a class="nav-link" *ngIf="checkLogin === 'false' ? true : false" (click)="exit()" routerLink="/">Đăng xuất</a>
+        <a class="nav-link" *ngIf="checkLogin === 'false' ? true : false" (click)="exit()" href="/">Đăng xuất</a>
       </li>
       <li class="nav-item">
         <a class="nav-link sparkle u-hover--sparkle" routerLink="/signup-homepage">Đăng ký</a>

@@ -12,6 +12,8 @@ export class ShowDetailsComponent implements OnInit {
 
   listHouse: any;
   id: number;
+  deaslList: any[];
+  idHouseLocal: any;
   categoryHouseList: any[];
   categoryRoomList: any[];
   formGroup = new FormGroup({
@@ -28,6 +30,13 @@ export class ShowDetailsComponent implements OnInit {
         this.formGroup.controls.categoryHouseId.setValue(this.listHouse.categoryHouse.id);
         this.formGroup.controls.categoryRoomId.setValue(this.listHouse.categoryRoom.id);
         this.id = Number(idSearch);
+        this.idHouseLocal = this.listHouse.idNha;
+        console.log(this.idHouseLocal);
+        localStorage.setItem('idHouse', this.idHouseLocal);
+      });
+      this.componentsService.findByDealOfHouse(idSearch).subscribe( result => {
+        this.deaslList = result;
+        console.log(this.deaslList);
       });
     });
     this.componentsService.listCategoryHouse().subscribe( result => {

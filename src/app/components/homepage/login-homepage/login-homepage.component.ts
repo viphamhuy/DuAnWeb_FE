@@ -47,6 +47,8 @@ export class LoginHomepageComponent implements OnInit {
     for (let i = 0; i < this.listCustomer.length ; i++) {
       if (this.listCustomer[i].userName === userName && this.listCustomer[i].password === password) {
         this.customerId = this.listCustomer[i].idCustomer;
+        localStorage.setItem('idCustomer', this.customerId);
+        console.log(localStorage.getItem('idCustomer'));
         this.customerName = this.listCustomer[i].ten;
         localStorage.setItem('customerName', this.customerName);
         this.route.navigate(['/home/']).then( (e) => {

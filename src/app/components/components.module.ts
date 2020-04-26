@@ -26,13 +26,17 @@ import { ShowDetailUserComponent } from './user/show-detail-user/show-detail-use
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { LoginHomepageComponent } from './homepage/login-homepage/login-homepage.component';
 import { SignupHomepageComponent } from './homepage/signup-homepage/signup-homepage.component';
+import { DealsComponent } from './homepage/deals/deals.component';
+import { ShowDetailCustomerComponent } from './homepage/show-detail-customer/show-detail-customer.component';
+import { CheckoutDealsComponent } from './homepage/checkout-deals/checkout-deals.component';
+import { HistoryHouseComponent } from './user/history-house/history-house.component';
 
 
 
 @NgModule({
   declarations: [
     // tslint:disable-next-line:max-line-length
-    ComponentsComponent, BodyNewsComponent, HomepageComponent, FooterComponent, HotNewsComponent, MenuBarComponent, SideBarComponent, UserComponent, HouseListComponent, AddHouseComponent, EditHouseComponent, ShowDetailsComponent, SideBarUserComponent, HomeListComponent, ShowDetailHouseComponent, LoginComponent, SignUpComponent, ShowDetailUserComponent, EditUserComponent, LoginHomepageComponent, SignupHomepageComponent],
+    ComponentsComponent, BodyNewsComponent, HomepageComponent, FooterComponent, HotNewsComponent, MenuBarComponent, SideBarComponent, UserComponent, HouseListComponent, AddHouseComponent, EditHouseComponent, ShowDetailsComponent, SideBarUserComponent, HomeListComponent, ShowDetailHouseComponent, LoginComponent, SignUpComponent, ShowDetailUserComponent, EditUserComponent, LoginHomepageComponent, SignupHomepageComponent, DealsComponent, ShowDetailCustomerComponent, CheckoutDealsComponent, HistoryHouseComponent],
   imports: [
     CommonModule,
     ComponentsRoutingModule,

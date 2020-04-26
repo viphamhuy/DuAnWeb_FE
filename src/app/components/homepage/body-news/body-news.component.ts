@@ -12,6 +12,7 @@ export class BodyNewsComponent implements OnInit {
   categoryHouseList: any[];
   categoryRoomList: any[];
   isShowForm = false;
+  linkUrl: any;
   constructor(private componentsService: ComponentsService) { }
 
   ngOnInit(): void {
@@ -25,6 +26,8 @@ export class BodyNewsComponent implements OnInit {
     this.componentsService.listCategoryRoom().subscribe( result1 => {
       this.categoryRoomList = result1;
     });
+    this.isShowForm = Boolean(localStorage.getItem('check'));
+    console.log(this.isShowForm);
   }
 
 }

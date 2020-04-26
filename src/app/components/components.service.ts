@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {IHouse} from '../interface/house';
 import {IHost} from '../interface/host';
 import {ICustomer} from '../interface/customer';
+import {IDeal} from "../interface/deal";
 
 @Injectable()
 export class ComponentsService {
@@ -71,6 +72,18 @@ export class ComponentsService {
   public findByIdChuNha(id: string): Observable<any> {
     return this.httpClient.get('http://localhost:5000/api/findAllByHost?host=' + id);
   }
+  public findByIdCustomer(id: string): Observable<any> {
+    return this.httpClient.get('http://localhost:5000/api/customers/' + id);
+  }
+  public findByDealOfIdCustomerTrong(id: string): Observable<any> {
+    return this.httpClient.get('http://localhost:5000/api/findByIdCustomer?customer=' + id);
+  }
+  public findByDealOfIdCustomerTraPhong(id: string): Observable<any> {
+    return this.httpClient.get('http://localhost:5000/api/findByIdCustomerDeal?customer=' + id);
+  }
+  public findByIdDeals(id: string): Observable<any> {
+    return this.httpClient.get('http://localhost:5000/api/deals/' + id);
+  }
   public findByIdHost(id: string): Observable<any> {
     return this.httpClient.get('http://localhost:5000/api/hosts/' + id);
   }
@@ -98,6 +111,25 @@ export class ComponentsService {
       checkLogin
     };
     return this.httpClient.put('http://localhost:5000/api/checks/' + id, check);
+  }
+  public addDeals(deals: IDeal): Observable<any> {
+    return this.httpClient.post('http://localhost:5000/api/deals/', deals);
+  }
+  public updateDeals(deals: IDeal): Observable<any> {
+    return this.httpClient.put('http://localhost:5000/api/deals/' + deals.idGiaoDich, deals);
+  }
+  public findByDealOfHouse(id: string): Observable<any> {
+    return this.httpClient.get('http://localhost:5000/api/findByIdHouse?house=' + id);
+  }
+  public findByHouseOfDaThue(id: string): Observable<any> {
+    return this.httpClient.get('http://localhost:5000/api/housess?house=' + id)
+  }
+  public editHouseByTrangThai(id: number, trangThai: string): Observable<any> {
+    const house = {
+      id,
+      trangThai
+    };
+    return this.httpClient.put('http://localhost:5000/api/housesss/' + id, house);
   }
 }
 
