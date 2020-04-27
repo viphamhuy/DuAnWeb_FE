@@ -32,7 +32,7 @@
         <a class="nav-link" ><app-login></app-login></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link sparkle u-hover--sparkle" *ngIf="checkLogin === 'false' ? true : false">{{customerName}}</a>
+        <a class="nav-link sparkle u-hover--sparkle" *ngIf="checkLogin === 'false' ? true : false" routerLink="/customer/{{idCustomer}}">{{customerName}}</a>
       </li>
     </ul>
   </div>

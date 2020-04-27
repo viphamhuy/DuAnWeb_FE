@@ -19,13 +19,15 @@ import {SignupHomepageComponent} from './homepage/signup-homepage/signup-homepag
 import {DealsComponent} from './homepage/deals/deals.component';
 import {ShowDetailCustomerComponent} from './homepage/show-detail-customer/show-detail-customer.component';
 import {CheckoutDealsComponent} from './homepage/checkout-deals/checkout-deals.component';
-import {HistoryHouseComponent} from "./user/history-house/history-house.component";
+import {HistoryHouseComponent} from './user/history-house/history-house.component';
+import {DeleteDealsComponent} from './homepage/delete-deals/delete-deals.component';
 
 const routes: Routes = [{ path: 'home', component: HomepageComponent },
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'views/:id', component: ShowDetailsComponent},
   {path: 'deals', component: DealsComponent},
   {path: 'checkout-deals/:id', component: CheckoutDealsComponent},
+  {path: 'delete-deals/:id', component: DeleteDealsComponent},
   {path: 'customer/:id', component: ShowDetailCustomerComponent},
   {path: 'history/:id', component: HistoryHouseComponent},
   {path: 'user/:id', component: HomeListComponent},

@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
 export class MenuBarComponent implements OnInit {
 
   checkLogin: any;
-  abc: any;
+  idCustomer: any;
   listHouse: any[];
   listCustomer: any[];
   listCheck: any;
@@ -36,6 +36,7 @@ export class MenuBarComponent implements OnInit {
     });
     this.checkLogin = localStorage.getItem('check');
     console.log(this.checkLogin);
+    this.idCustomer = localStorage.getItem('idCustomer');
     this.customerName = localStorage.getItem('customerName');
     console.log(this.customerName);
     this.componentsService.findByIdCheck(1).subscribe( result => {

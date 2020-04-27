@@ -19,7 +19,7 @@
 <br>
 <p>Nhà đang thuê</p>
 <div *ngFor="let d of dealsListTrong">
-  {{d.house.tenNha}}<button routerLink="/checkout-deals/{{d.idGiaoDich}}">Trả phòng</button>
+  {{d.house.tenNha}}<button routerLink="/delete-deals/{{d.idGiaoDich}}">Hủy</button><button routerLink="/checkout-deals/{{d.idGiaoDich}}">Trả phòng</button>
 </div>
 <p>Nhà đã thuê</p>
 <div *ngFor="let d of dealsListTraPhong">
